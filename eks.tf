@@ -88,6 +88,6 @@ module "s3_irsa_access" {
     }
   }
   role_policy_arns = {
-    s3 = aws_iam_policy.irsa-access.arn
+    s3 = aws_iam_policy.irsa_access.arn
   }
 }
