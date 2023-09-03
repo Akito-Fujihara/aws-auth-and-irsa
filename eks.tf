@@ -1,5 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
+  version = "~> 19.0"
 
   cluster_endpoint_public_access = true
 
@@ -13,6 +14,9 @@ module "eks" {
     main = {
       desired_size   = 1
       instance_types = ["t2.micro"]
+      iam_role_additional_policies = {
+        s3_access_role = aws_iam_policy.node_role_access.arn
+      }
     }
   }
 
