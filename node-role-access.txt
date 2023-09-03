@@ -1,0 +1,1 @@
+node-roleによって取得できるtxt file
